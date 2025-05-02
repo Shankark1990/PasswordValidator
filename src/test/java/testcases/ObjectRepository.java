@@ -10,4 +10,8 @@ public class ObjectRepository {
     public static final String shortPass = "Shankar";
     public static final String consecutiveLetters="Shankar@123";
 
+    public static final String excelPath="resource/PassData.xlsx";
+
+
+
 }

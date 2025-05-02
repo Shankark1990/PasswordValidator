@@ -10,6 +10,15 @@ public class TestData {
 
     private String validPassword;
     private String shortPass;
+    private String consecutiveLetter;
+
+    public String getConsecutiveLetter() {
+        return consecutiveLetter;
+    }
+
+    public void setConsecutiveLetter(String consecutiveLetter) {
+        this.consecutiveLetter = consecutiveLetter;
+    }
 
     public String getShortPass() {
         return shortPass;
@@ -40,6 +49,7 @@ public class TestData {
 
         testData.setValidPassword(prop.getProperty("validPassword"));
         testData.setShortPass(prop.getProperty("shortPass"));
+        testData.setConsecutiveLetter(prop.getProperty("consecutiveLetters"));
 
         Object[][] data={{testData}};
         return data;
