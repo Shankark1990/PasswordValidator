@@ -1,0 +1,44 @@
+{
+  "passwords": [
+    {
+      "password": "Short1!",
+      "error": "Password characters should be range 8-15 characters."
+    },
+    {
+      "password": "VeryLongPassword123!",
+      "error": "Password characters should be range 8-15 characters."
+    },
+    {
+      "password": "NoNumber!",
+      "error": "Password must have at least one number."
+    },
+    {
+      "password": "NoSpecial123",
+      "error": "Password must have at least one special character like !@#$%_."
+    },
+    {
+      "password": "ABCabc123@",
+      "error": "Password cannot have consecutive letters and numbers like abc, 123."
+    },
+    {
+      "password": "Jan2025@Aa",
+      "error": "Password cannot have Month Name or Day name like Jan, January."
+    },
+    {
+      "password": "Monday_77A",
+      "error": "Password cannot have Month Name or Day name like Monday, Mon."
+    },
+    {
+      "password": "9876543210_Aa!",
+      "error": "Password cannot have a mobile number (10 consecutive digits)."
+    },
+    {
+      "password": "Valid_99Xa!",
+      "error": "Meets all criteria."
+    },
+    {
+      "password": "Strong_23!",
+      "error": "Meets all criteria."
+    }
+  ]
+}
