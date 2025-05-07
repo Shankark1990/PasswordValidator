@@ -1,13 +1,14 @@
 package testcases;
 
+import Utils.Actions;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.openqa.selenium.By;
+import org.testng.Assert;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.List;
-import java.util.Map;
 
 public class PassValidatorJson extends BaseClass {
 
@@ -16,37 +17,41 @@ public class PassValidatorJson extends BaseClass {
 
         System.out.println(content);*/
 
-        Object[][] data=null;
+        Object[][] data = null;
 
         ObjectMapper objMapper = new ObjectMapper();
-        Map<String, String> testData = objMapper.readValue(new File("resource/JsonData.json"), Map.class);
-        for(Map.Entry<String,String> entry:testData.entrySet()){
+        File jsonfile = new File("resource/JsonData.json");
 
-            System.out.println(entry.getKey());
-            System.out.println(entry.getValue());
+        JsonData[] data1 = objMapper.readValue(jsonfile, JsonData[].class);
 
-        }
-       /* int passCount=testData.get("password").length();
-        int erroCount=testData.get("error").length();
 
-        System.out.println(passCount);
-        System.out.println(erroCount);*/
+        System.out.println(data1);
 
 
     }
 
-/*
-    @Test(dataProvider = "jsonData")
+    @DataProvider(name = "json_data")
     public Object[][] get_Json_Data() throws IOException {
-        Object[][] data=null;
+        Object[][] objData = null;
 
         ObjectMapper objMapper = new ObjectMapper();
-        Map<String, String> testData = objMapper.readValue(new File("resource/JsonData.json"), Map.class);
-        int passCount=testData.get("password").length();
-        data=new Object[][]
+        JsonData[] data = objMapper.readValue(new File("resource/JsonData.json"), JsonData[].class);
 
+        objData = new Object[data.length][1];
 
-        return testData;
+        for (int i = 0; i < data.length; i++) {
+            objData[i][0] = data[i];
+        }
 
-    }*/
+        return objData;
+
+    }
+
+    @Test(dataProvider = "json_data")
+    public void readJsonData(JsonData data) {
+        Actions.enterText(driver, data.getPassword());
+        Actions.eleClcik(driver);
+        String actualErrorMsg = driver.findElement(By.xpath(ObjectRepository.errorMessage_xpath)).getText();
+        Assert.assertEquals(data.getError(), actualErrorMsg);
+    }
 }

@@ -1,44 +1,42 @@
-{
-  "passwords": [
-    {
-      "password": "Short1!",
-      "error": "Password characters should be range 8-15 characters."
-    },
-    {
-      "password": "VeryLongPassword123!",
-      "error": "Password characters should be range 8-15 characters."
-    },
-    {
-      "password": "NoNumber!",
-      "error": "Password must have at least one number."
-    },
-    {
-      "password": "NoSpecial123",
-      "error": "Password must have at least one special character like !@#$%_."
-    },
-    {
-      "password": "ABCabc123@",
-      "error": "Password cannot have consecutive letters and numbers like abc, 123."
-    },
-    {
-      "password": "Jan2025@Aa",
-      "error": "Password cannot have Month Name or Day name like Jan, January."
-    },
-    {
-      "password": "Monday_77A",
-      "error": "Password cannot have Month Name or Day name like Monday, Mon."
-    },
-    {
-      "password": "9876543210_Aa!",
-      "error": "Password cannot have a mobile number (10 consecutive digits)."
-    },
-    {
-      "password": "Valid_99Xa!",
-      "error": "Meets all criteria."
-    },
-    {
-      "password": "Strong_23!",
-      "error": "Meets all criteria."
-    }
-  ]
-}
+[
+  {
+    "password": "Short1!",
+    "error": "Wrong Password ! Password must be between 8 and 15 characters."
+  },
+  {
+    "password": "VeryLongPassword123!",
+    "error": "Wrong Password ! Password must be between 8 and 15 characters."
+  },
+  {
+    "password": "NoNumber!",
+    "error": "Wrong Password ! Password must contain uppercase, lowercase, number and special character (!@#$%_)."
+  },
+  {
+    "password": "NoSpecial123",
+    "error": "Wrong Password ! Password must contain uppercase, lowercase, number and special character (!@#$%_)."
+  },
+  {
+    "password": "ABCabc123@",
+    "error": "Wrong Password ! Password cannot have consecutive letters or numbers like 'abc' or '123'."
+  },
+  {
+    "password": "Jan2025@Aa",
+    "error": "Wrong Password ! Password cannot contain month or day names."
+  },
+  {
+    "password": "Monday_77A",
+    "error": "Wrong Password ! Password cannot contain month or day names."
+  },
+  {
+    "password": "9876543210_Aa!",
+    "error": "Wrong Password ! Password cannot contain 10-digit mobile numbers."
+  },
+  {
+    "password": "Valid_99Xa!",
+    "error": "Congratulations ! Password is valid!"
+  },
+  {
+    "password": "Strong_23!",
+    "error": "Congratulations ! Password is valid!"
+  }
+]
